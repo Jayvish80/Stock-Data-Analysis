@@ -1,6 +1,5 @@
 # ============================================================
-# STOCKVISION AI
-# PROFESSIONAL STOCK MARKET ANALYTICS DASHBOARD
+# STOCKVISION AI - STOCK MARKET ANALYSIS DASHBOARD
 # ============================================================
 
 import streamlit as st
@@ -23,593 +22,211 @@ st.set_page_config(
 
 
 # ============================================================
-# CUSTOM CSS
+# PROFESSIONAL CSS
 # ============================================================
 
 st.markdown(
     """
     <style>
 
-    /* ======================================================
-       GLOBAL PAGE
-    ====================================================== */
+    /* ================================
+       MAIN APP
+    ================================= */
 
     .stApp {
-
         background:
-
-        radial-gradient(
-            circle at top right,
-            #172554 0%,
-            #0f172a 35%,
-            #020617 100%
+        linear-gradient(
+            135deg,
+            #020617 0%,
+            #0f172a 45%,
+            #172554 100%
         );
-
-        color: #f8fafc;
-
     }
 
 
-    /* ======================================================
-       MAIN CONTENT WIDTH
-    ====================================================== */
+    /* ================================
+       MAIN CONTENT
+    ================================= */
 
     .block-container {
-
         max-width: 1500px;
-
-        padding-top: 2.5rem;
-
+        padding-top: 2rem;
         padding-bottom: 3rem;
-
         padding-left: 3rem;
-
         padding-right: 3rem;
-
     }
 
 
-    /* ======================================================
+    /* ================================
        SIDEBAR
-    ====================================================== */
+    ================================= */
 
     section[data-testid="stSidebar"] {
-
         background:
-
         linear-gradient(
-
             180deg,
-
             #020617 0%,
-
             #0f172a 100%
-
         );
 
-        border-right:
-
-        1px solid #1e293b;
-
+        border-right: 1px solid #1e293b;
     }
 
-
-    /* SIDEBAR TEXT */
 
     section[data-testid="stSidebar"] * {
-
         color: #e2e8f0;
-
     }
 
 
-    /* ======================================================
-       SIDEBAR BRAND
-    ====================================================== */
-
-    .sidebar-brand {
-
-        text-align: center;
-
-        padding: 10px 0 25px 0;
-
-    }
-
-
-    .sidebar-logo {
-
-        font-size: 42px;
-
-        margin-bottom: 5px;
-
-    }
-
-
-    .sidebar-title {
-
-        font-size: 22px;
-
-        font-weight: 800;
-
-        background:
-
-        linear-gradient(
-
-            90deg,
-
-            #38bdf8,
-
-            #818cf8
-
-        );
-
-        -webkit-background-clip: text;
-
-        -webkit-text-fill-color: transparent;
-
-    }
-
-
-    .sidebar-subtitle {
-
-        color: #64748b;
-
-        font-size: 12px;
-
-        margin-top: 5px;
-
-    }
-
-
-    /* ======================================================
-       FILE UPLOADER
-    ====================================================== */
+    /* ================================
+       SIDEBAR FILE UPLOADER
+    ================================= */
 
     section[data-testid="stSidebar"]
-
     div[data-testid="stFileUploader"] {
-
-        background: #111827 !important;
-
-        border: 1px solid #334155 !important;
-
-        border-radius: 14px !important;
-
-        padding: 10px !important;
-
-    }
-
-
-    section[data-testid="stSidebar"]
-
-    div[data-testid="stFileUploaderDropzone"] {
-
-        background: #1e293b !important;
-
-        border: 2px dashed #475569 !important;
-
-        border-radius: 10px !important;
-
-    }
-
-
-    section[data-testid="stSidebar"]
-
-    div[data-testid="stFileUploaderDropzone"] * {
-
-        color: #e2e8f0 !important;
-
-    }
-
-
-    section[data-testid="stSidebar"]
-
-    div[data-testid="stFileUploader"] button {
-
-        background: #2563eb !important;
-
-        color: white !important;
-
-        border: none !important;
-
-        border-radius: 8px !important;
-
-        font-weight: 700 !important;
-
-    }
-
-
-    /* ======================================================
-       DATE INPUTS
-    ====================================================== */
-
-    section[data-testid="stSidebar"]
-
-    div[data-testid="stDateInput"] label {
-
-        color: #cbd5e1 !important;
-
-        font-weight: 700 !important;
-
-    }
-
-
-    section[data-testid="stSidebar"]
-
-    div[data-testid="stDateInput"] input {
-
-        background: #ffffff !important;
-
-        color: #0f172a !important;
-
-        border: 2px solid #334155 !important;
-
-        border-radius: 10px !important;
-
-        font-weight: 600 !important;
-
-    }
-
-
-    /* ======================================================
-       HEADER
-    ====================================================== */
-
-    .dashboard-header {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 18px;
-
-        margin-bottom: 8px;
-
-    }
-
-
-    .header-icon {
-
-        width: 58px;
-
-        height: 58px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
+        background: #111827;
+        border: 1px solid #334155;
         border-radius: 14px;
-
-        background:
-
-        linear-gradient(
-
-            135deg,
-
-            #38bdf8,
-
-            #2563eb
-
-        );
-
-        font-size: 32px;
-
-        box-shadow:
-
-        0 10px 30px
-
-        rgba(37, 99, 235, 0.3);
-
+        padding: 10px;
     }
 
 
-    .main-title {
+    section[data-testid="stSidebar"]
+    div[data-testid="stFileUploaderDropzone"] {
+        background: #1e293b;
+        border: 2px dashed #475569;
+        border-radius: 10px;
+    }
 
-        font-size: 46px;
 
-        font-weight: 900;
+    /* ================================
+       SIDEBAR DATE INPUT
+    ================================= */
 
-        line-height: 1;
+    section[data-testid="stSidebar"]
+    div[data-testid="stDateInput"] input {
+        background: white !important;
+        color: #0f172a !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+    }
+
+
+    /* ================================
+       MAIN TITLE
+    ================================= */
+
+    h1 {
+        font-size: 46px !important;
 
         background:
-
         linear-gradient(
-
             90deg,
-
             #38bdf8,
-
             #818cf8,
-
             #c084fc
-
         );
 
         -webkit-background-clip: text;
-
         -webkit-text-fill-color: transparent;
 
+        font-weight: 900 !important;
     }
 
 
-    .subtitle {
-
-        color: #94a3b8;
-
-        font-size: 16px;
-
-        margin-top: 10px;
-
-        margin-bottom: 28px;
-
+    h2, h3 {
+        color: #f8fafc !important;
     }
 
 
-    /* ======================================================
-       WELCOME CARD
-    ====================================================== */
+    /* ================================
+       INFO BOX
+    ================================= */
 
-    .welcome-card {
-
-        padding: 25px;
-
-        border-radius: 18px;
-
-        background:
-
-        linear-gradient(
-
-            135deg,
-
-            rgba(30, 64, 175, 0.35),
-
-            rgba(30, 41, 59, 0.75)
-
-        );
-
+    div[data-testid="stAlert"] {
+        border-radius: 14px;
         border: 1px solid #334155;
-
-        margin-top: 20px;
-
-        margin-bottom: 25px;
-
     }
 
 
-    .welcome-title {
+    /* ================================
+       METRIC CARDS
+    ================================= */
 
-        font-size: 22px;
-
-        font-weight: 800;
-
-        color: #f8fafc;
-
-    }
-
-
-    .welcome-text {
-
-        color: #94a3b8;
-
-        margin-top: 8px;
-
-        line-height: 1.6;
-
-    }
-
-
-    /* ======================================================
-       KPI CARDS
-    ====================================================== */
-
-    .metric-card {
-
-        min-height: 140px;
-
-        padding: 22px;
-
-        border-radius: 18px;
+    div[data-testid="stMetric"] {
 
         background:
-
         linear-gradient(
-
             145deg,
-
-            rgba(30, 41, 59, 0.95),
-
-            rgba(15, 23, 42, 0.95)
-
+            #1e293b,
+            #0f172a
         );
 
         border: 1px solid #334155;
+
+        padding: 20px;
+
+        border-radius: 16px;
 
         box-shadow:
-
-        0 10px 25px
-
-        rgba(0, 0, 0, 0.2);
-
-        transition: all 0.3s ease;
+        0 8px 25px rgba(0, 0, 0, 0.25);
 
     }
 
 
-    .metric-card:hover {
-
-        transform: translateY(-5px);
+    div[data-testid="stMetric"]:hover {
 
         border-color: #38bdf8;
 
-        box-shadow:
+        transform: translateY(-3px);
 
-        0 15px 35px
-
-        rgba(56, 189, 248, 0.15);
+        transition: 0.3s;
 
     }
 
 
-    .metric-icon {
+    div[data-testid="stMetricLabel"] {
 
-        font-size: 22px;
-
-        margin-bottom: 10px;
+        color: #94a3b8 !important;
 
     }
 
 
-    .metric-title {
+    div[data-testid="stMetricValue"] {
 
-        color: #94a3b8;
-
-        font-size: 12px;
-
-        font-weight: 700;
-
-        text-transform: uppercase;
-
-        letter-spacing: 1px;
-
-    }
-
-
-    .metric-value {
-
-        color: #f8fafc;
-
-        font-size: 26px;
+        color: #f8fafc !important;
 
         font-weight: 800;
 
-        margin-top: 8px;
-
     }
 
 
-    /* ======================================================
-       SECTION TITLE
-    ====================================================== */
-
-    .section-title {
-
-        font-size: 25px;
-
-        font-weight: 800;
-
-        margin-top: 30px;
-
-        margin-bottom: 18px;
-
-        color: #f8fafc;
-
-    }
-
-
-    /* ======================================================
-       AI SIGNAL
-    ====================================================== */
-
-    .signal-card {
-
-        padding: 25px;
-
-        border-radius: 20px;
-
-        background:
-
-        linear-gradient(
-
-            135deg,
-
-            #172554,
-
-            #1e1b4b
-
-        );
-
-        border: 1px solid #4338ca;
-
-        box-shadow:
-
-        0 12px 35px
-
-        rgba(79, 70, 229, 0.2);
-
-        margin-top: 25px;
-
-        margin-bottom: 25px;
-
-    }
-
-
-    .signal-label {
-
-        color: #a5b4fc;
-
-        font-size: 13px;
-
-        font-weight: 700;
-
-        letter-spacing: 1px;
-
-        text-transform: uppercase;
-
-    }
-
-
-    .signal-value {
-
-        font-size: 34px;
-
-        font-weight: 900;
-
-        margin-top: 8px;
-
-    }
-
-
-    .signal-description {
-
-        color: #cbd5e1;
-
-        margin-top: 10px;
-
-    }
-
-
-    /* ======================================================
+    /* ================================
        CHART CONTAINER
-    ====================================================== */
+    ================================= */
 
     div[data-testid="stPlotlyChart"] {
 
-        background:
-
-        rgba(15, 23, 42, 0.65);
+        background: rgba(15, 23, 42, 0.65);
 
         border: 1px solid #1e293b;
 
-        border-radius: 18px;
+        border-radius: 16px;
 
         padding: 8px;
 
-        margin-bottom: 22px;
+        margin-bottom: 20px;
 
     }
 
 
-    /* ======================================================
+    /* ================================
        TABS
-    ====================================================== */
+    ================================= */
 
     button[data-baseweb="tab"] {
 
         color: #94a3b8;
-
-        font-size: 15px;
 
         font-weight: 700;
 
@@ -623,9 +240,22 @@ st.markdown(
     }
 
 
-    /* ======================================================
+    /* ================================
+       BUTTONS
+    ================================= */
+
+    .stButton button {
+
+        border-radius: 10px;
+
+        font-weight: 700;
+
+    }
+
+
+    /* ================================
        DOWNLOAD BUTTON
-    ====================================================== */
+    ================================= */
 
     .stDownloadButton button {
 
@@ -644,20 +274,11 @@ st.markdown(
     }
 
 
-    .stDownloadButton button:hover {
-
-        background: #38bdf8;
-
-        color: #020617;
-
-    }
-
-
-    /* ======================================================
+    /* ================================
        FOOTER
-    ====================================================== */
+    ================================= */
 
-    .footer {
+    .footer-text {
 
         text-align: center;
 
@@ -666,8 +287,6 @@ st.markdown(
         padding: 30px;
 
         margin-top: 40px;
-
-        border-top: 1px solid #1e293b;
 
     }
 
@@ -684,33 +303,14 @@ st.markdown(
 
 with st.sidebar:
 
-    st.markdown(
+    st.markdown("# 📈 StockVision AI")
 
-        """
-        <div class="sidebar-brand">
+    st.caption("Smart Stock Market Intelligence")
 
-            <div class="sidebar-logo">📈</div>
-
-            <div class="sidebar-title">
-                StockVision AI
-            </div>
-
-            <div class="sidebar-subtitle">
-                Smart Market Intelligence
-            </div>
-
-        </div>
-        """,
-
-        unsafe_allow_html=True
-
-    )
+    st.divider()
 
 
-    st.markdown("---")
-
-
-    st.markdown("### 📂 Upload Market Data")
+    st.subheader("📂 Upload Market Data")
 
 
     uploaded_file = st.file_uploader(
@@ -719,27 +319,15 @@ with st.sidebar:
 
         type=["csv"],
 
-        help="Upload historical stock market data in CSV format."
+        help="Upload your historical stock market CSV file."
 
     )
 
 
-    st.markdown("---")
+    st.divider()
 
 
-    if uploaded_file is not None:
-
-        st.markdown("### 📅 Analysis Period")
-
-
-        # Date inputs are created later
-        # after the CSV is loaded
-
-
-    st.markdown("---")
-
-
-    st.markdown("### 📌 Dashboard Modules")
+    st.subheader("📌 Dashboard Modules")
 
     st.markdown(
 
@@ -756,140 +344,111 @@ with st.sidebar:
 
         🔗 Correlation Matrix
 
-        🤖 AI Signal Engine
-
+        🤖 AI Technical Signals
         """
 
     )
 
 
 # ============================================================
-# HEADER
+# MAIN HEADER
 # ============================================================
 
-st.markdown(
+st.title("📈 StockVision AI")
 
-    """
-    <div class="dashboard-header">
+st.write(
 
-        <div class="header-icon">
-            📈
-        </div>
-
-        <div class="main-title">
-            StockVision AI
-        </div>
-
-    </div>
-    """,
-
-    unsafe_allow_html=True
-
-)
-
-
-st.markdown(
-
-    """
-    <div class="subtitle">
-
-    Intelligent stock market analytics • Technical indicators •
-
-    Risk analysis • Interactive visualizations
-
-    </div>
-
-    """,
-
-    unsafe_allow_html=True
+    "Intelligent stock market analytics • Technical indicators • "
+    "Risk analysis • Interactive visualizations"
 
 )
 
 
 # ============================================================
-# NO FILE UPLOADED
+# IF NO FILE UPLOADED
 # ============================================================
 
 if uploaded_file is None:
 
-    st.markdown(
+    st.info(
 
-        """
-        <div class="welcome-card">
-
-            <div class="welcome-title">
-
-                👋 Welcome to StockVision AI
-
-            </div>
-
-            <div class="welcome-text">
-
-                Upload your historical stock CSV file from the
-
-                sidebar to unlock interactive price analysis,
-
-                technical indicators, risk metrics, and AI-powered
-
-                technical signals.
-
-            </div>
-
-        </div>
-
-        """,
-
-        unsafe_allow_html=True
+        "👋 Welcome to StockVision AI! "
+        "Upload a historical stock CSV file from the sidebar "
+        "to start your analysis."
 
     )
 
 
-    # FEATURE CARDS
-
-    st.markdown(
-
-        '<div class="section-title">🚀 What You Can Analyze</div>',
-
-        unsafe_allow_html=True
-
-    )
+    st.subheader("🚀 What You Can Analyze")
 
 
-    c1, c2, c3, c4 = st.columns(4)
+    col1, col2, col3, col4 = st.columns(4)
 
 
-    with c1:
+    with col1:
 
-        st.info(
+        st.metric(
 
-            "📈 Price Trends\n\nAnalyze historical opening, closing, high and low prices."
+            label="📈 Price Trends",
+
+            value="Analyze"
+
+        )
+
+        st.caption(
+
+            "Analyze opening, closing, high and low prices."
 
         )
 
 
-    with c2:
+    with col2:
 
-        st.info(
+        st.metric(
 
-            "📊 Market Volume\n\nUnderstand buying and selling activity."
+            label="📊 Market Volume",
+
+            value="Analyze"
+
+        )
+
+        st.caption(
+
+            "Understand buying and selling activity."
 
         )
 
 
-    with c3:
+    with col3:
 
-        st.info(
+        st.metric(
 
-            "📉 Risk Analysis\n\nMeasure returns and market volatility."
+            label="📉 Risk Analysis",
+
+            value="Analyze"
+
+        )
+
+        st.caption(
+
+            "Measure returns and market volatility."
 
         )
 
 
-    with c4:
+    with col4:
 
-        st.info(
+        st.metric(
 
-            "🤖 AI Signals\n\nAnalyze technical indicators and market momentum."
+            label="🤖 AI Signals",
+
+            value="Analyze"
+
+        )
+
+        st.caption(
+
+            "Analyze technical indicators and momentum."
 
         )
 
@@ -898,7 +457,7 @@ if uploaded_file is None:
 
 
 # ============================================================
-# LOAD CSV
+# LOAD CSV FILE
 # ============================================================
 
 try:
@@ -909,7 +468,7 @@ except Exception as error:
 
     st.error(
 
-        f"❌ Could not read the CSV file: {error}"
+        f"❌ Error loading CSV file: {error}"
 
     )
 
@@ -926,35 +485,75 @@ df.columns = (
 
     .str.strip()
 
+    .str.upper()
+
 )
 
 
 # ============================================================
-# DATE COLUMN
+# SHOW AVAILABLE COLUMNS
 # ============================================================
 
-if "DATE" not in df.columns:
+with st.expander("🔍 View Dataset Information"):
 
-    st.error(
+    st.write(
 
-        "❌ Your CSV must contain a DATE column."
+        "Available columns:"
 
     )
 
     st.write(
 
-        "Available columns:",
-
         list(df.columns)
+
+    )
+
+
+# ============================================================
+# FIND DATE COLUMN
+# ============================================================
+
+date_column = None
+
+
+possible_date_columns = [
+
+    "DATE",
+
+    "DATETIME",
+
+    "TIMESTAMP"
+
+]
+
+
+for column in possible_date_columns:
+
+    if column in df.columns:
+
+        date_column = column
+
+        break
+
+
+if date_column is None:
+
+    st.error(
+
+        "❌ Your CSV file must contain a DATE column."
 
     )
 
     st.stop()
 
 
-df["DATE"] = pd.to_datetime(
+# ============================================================
+# CONVERT DATE
+# ============================================================
 
-    df["DATE"],
+df[date_column] = pd.to_datetime(
+
+    df[date_column],
 
     errors="coerce"
 
@@ -963,20 +562,20 @@ df["DATE"] = pd.to_datetime(
 
 df = df.dropna(
 
-    subset=["DATE"]
+    subset=[date_column]
 
 )
 
 
 df = df.sort_values(
 
-    "DATE"
+    date_column
 
 )
 
 
 # ============================================================
-# NUMERIC COLUMNS
+# CLEAN NUMERIC DATA
 # ============================================================
 
 numeric_columns = [
@@ -987,21 +586,23 @@ numeric_columns = [
 
     "LOW",
 
-    "PREV. CLOSE",
+    "CLOSE",
 
     "LTP",
 
-    "CLOSE",
-
     "VWAP",
+
+    "VOLUME",
+
+    "VALUE",
+
+    "PREV. CLOSE",
 
     "52W H",
 
     "52W L",
 
-    "VOLUME",
-
-    "VALUE",
+    "NO. OF TRADES",
 
     "NO. OF  TRADES"
 
@@ -1037,7 +638,7 @@ for column in numeric_columns:
 
 
 # ============================================================
-# REQUIRED CLOSE COLUMN
+# CLOSE PRICE VALIDATION
 # ============================================================
 
 if "CLOSE" not in df.columns:
@@ -1052,12 +653,94 @@ if "CLOSE" not in df.columns:
 
 
 # ============================================================
-# FEATURE ENGINEERING
+# DATE FILTERS
 # ============================================================
 
-df["DAILY RETURN (%)"] = (
+with st.sidebar:
 
-    df["CLOSE"]
+    st.divider()
+
+    st.subheader("📅 Analysis Period")
+
+
+    start_date = st.date_input(
+
+        "Start Date",
+
+        value=df[date_column].min().date()
+
+    )
+
+
+    end_date = st.date_input(
+
+        "End Date",
+
+        value=df[date_column].max().date()
+
+    )
+
+
+if start_date > end_date:
+
+    st.error(
+
+        "❌ Start date cannot be after end date."
+
+    )
+
+    st.stop()
+
+
+# ============================================================
+# FILTER DATA
+# ============================================================
+
+filtered_df = df[
+
+    (
+
+        df[date_column]
+
+        >=
+
+        pd.to_datetime(start_date)
+
+    )
+
+    &
+
+    (
+
+        df[date_column]
+
+        <=
+
+        pd.to_datetime(end_date)
+
+    )
+
+].copy()
+
+
+if filtered_df.empty:
+
+    st.warning(
+
+        "⚠️ No data found for the selected dates."
+
+    )
+
+    st.stop()
+
+
+# ============================================================
+# TECHNICAL INDICATORS
+# ============================================================
+
+filtered_df["DAILY RETURN (%)"] = (
+
+    filtered_df["CLOSE"]
 
     .pct_change()
 
@@ -1066,39 +749,9 @@ df["DAILY RETURN (%)"] = (
 )
 
 
-if "PREV. CLOSE" in df.columns:
+filtered_df["MA20"] = (
 
-    df["PRICE CHANGE"] = (
-
-        df["CLOSE"]
-
-        -
-
-        df["PREV. CLOSE"]
-
-    )
-
-else:
-
-    df["PRICE CHANGE"] = df["CLOSE"].diff()
-
-
-if "HIGH" in df.columns and "LOW" in df.columns:
-
-    df["INTRADAY RANGE"] = (
-
-        df["HIGH"]
-
-        -
-
-        df["LOW"]
-
-    )
-
-
-df["MA20"] = (
-
-    df["CLOSE"]
+    filtered_df["CLOSE"]
 
     .rolling(20)
 
@@ -1107,9 +760,9 @@ df["MA20"] = (
 )
 
 
-df["MA50"] = (
+filtered_df["MA50"] = (
 
-    df["CLOSE"]
+    filtered_df["CLOSE"]
 
     .rolling(50)
 
@@ -1118,9 +771,9 @@ df["MA50"] = (
 )
 
 
-df["MA200"] = (
+filtered_df["MA200"] = (
 
-    df["CLOSE"]
+    filtered_df["CLOSE"]
 
     .rolling(200)
 
@@ -1129,9 +782,9 @@ df["MA200"] = (
 )
 
 
-df["VOLATILITY"] = (
+filtered_df["VOLATILITY"] = (
 
-    df["DAILY RETURN (%)"]
+    filtered_df["DAILY RETURN (%)"]
 
     .rolling(20)
 
@@ -1140,24 +793,11 @@ df["VOLATILITY"] = (
 )
 
 
-if "VOLUME" in df.columns:
-
-    df["VOLUME MA20"] = (
-
-        df["VOLUME"]
-
-        .rolling(20)
-
-        .mean()
-
-    )
-
-
 # ============================================================
-# RSI
+# RSI CALCULATION
 # ============================================================
 
-delta = df["CLOSE"].diff()
+delta = filtered_df["CLOSE"].diff()
 
 
 gain = delta.where(
@@ -1178,22 +818,24 @@ loss = -delta.where(
 )
 
 
-avg_gain = gain.rolling(14).mean()
+average_gain = gain.rolling(14).mean()
 
 
-avg_loss = loss.rolling(14).mean()
+average_loss = loss.rolling(14).mean()
 
 
-rs = avg_gain / avg_loss.replace(
+relative_strength = (
 
-    0,
+    average_gain
 
-    np.nan
+    /
+
+    average_loss.replace(0, np.nan)
 
 )
 
 
-df["RSI"] = (
+filtered_df["RSI"] = (
 
     100
 
@@ -1205,7 +847,15 @@ df["RSI"] = (
 
         /
 
-        (1 + rs)
+        (
+
+            1
+
+            +
+
+            relative_strength
+
+        )
 
     )
 
@@ -1213,94 +863,10 @@ df["RSI"] = (
 
 
 # ============================================================
-# DATE FILTERS
+# MARKET METRICS
 # ============================================================
 
-with st.sidebar:
-
-    start_date = st.date_input(
-
-        "Start Date",
-
-        value=df["DATE"].min().date(),
-
-        min_value=df["DATE"].min().date(),
-
-        max_value=df["DATE"].max().date()
-
-    )
-
-
-    end_date = st.date_input(
-
-        "End Date",
-
-        value=df["DATE"].max().date(),
-
-        min_value=df["DATE"].min().date(),
-
-        max_value=df["DATE"].max().date()
-
-    )
-
-
-if start_date > end_date:
-
-    st.error(
-
-        "❌ Start Date cannot be after End Date."
-
-    )
-
-    st.stop()
-
-
-filtered_df = df[
-
-    (
-
-        df["DATE"]
-
-        >=
-
-        pd.to_datetime(start_date)
-
-    )
-
-    &
-
-    (
-
-        df["DATE"]
-
-        <=
-
-        pd.to_datetime(end_date)
-
-    )
-
-].copy()
-
-
-if filtered_df.empty:
-
-    st.warning(
-
-        "⚠️ No data found for the selected date range."
-
-    )
-
-    st.stop()
-
-
-# ============================================================
-# CURRENT MARKET METRICS
-# ============================================================
-
-latest = filtered_df.iloc[-1]
-
-
-current_price = latest["CLOSE"]
+latest_price = filtered_df["CLOSE"].iloc[-1]
 
 
 highest_price = filtered_df["CLOSE"].max()
@@ -1319,203 +885,120 @@ total_return = (
 
         filtered_df["CLOSE"].iloc[0]
 
+        -
+
+        1
+
     )
 
-    -
+    * 100
 
-    1
+)
 
-) * 100
+
+average_volume = 0
 
 
 if "VOLUME" in filtered_df.columns:
 
     average_volume = filtered_df["VOLUME"].mean()
 
-else:
-
-    average_volume = 0
-
 
 # ============================================================
 # MARKET OVERVIEW
 # ============================================================
 
-st.markdown(
-
-    '<div class="section-title">📊 Market Overview</div>',
-
-    unsafe_allow_html=True
-
-)
+st.header("📊 Market Overview")
 
 
-k1, k2, k3, k4, k5 = st.columns(5)
+m1, m2, m3, m4, m5 = st.columns(5)
 
 
-def create_metric(
+with m1:
 
-    container,
+    st.metric(
 
-    icon,
+        "💰 Current Price",
 
-    title,
-
-    value
-
-):
-
-    container.markdown(
-
-        f"""
-
-        <div class="metric-card">
-
-            <div class="metric-icon">
-
-                {icon}
-
-            </div>
-
-            <div class="metric-title">
-
-                {title}
-
-            </div>
-
-            <div class="metric-value">
-
-                {value}
-
-            </div>
-
-        </div>
-
-        """,
-
-        unsafe_allow_html=True
+        f"${latest_price:,.2f}"
 
     )
 
 
-create_metric(
+with m2:
 
-    k1,
+    st.metric(
 
-    "💰",
+        "📈 Highest Price",
 
-    "Current Price",
+        f"${highest_price:,.2f}"
 
-    f"${current_price:,.2f}"
-
-)
+    )
 
 
-create_metric(
+with m3:
 
-    k2,
+    st.metric(
 
-    "📈",
+        "📉 Lowest Price",
 
-    "Highest Price",
+        f"${lowest_price:,.2f}"
 
-    f"${highest_price:,.2f}"
-
-)
+    )
 
 
-create_metric(
+with m4:
 
-    k3,
+    st.metric(
 
-    "📉",
+        "📊 Average Volume",
 
-    "Lowest Price",
+        f"{average_volume:,.0f}"
 
-    f"${lowest_price:,.2f}"
-
-)
+    )
 
 
-create_metric(
+with m5:
 
-    k4,
+    st.metric(
 
-    "📊",
+        "🚀 Total Return",
 
-    "Average Volume",
+        f"{total_return:.2f}%"
 
-    f"{average_volume:,.0f}"
-
-)
-
-
-create_metric(
-
-    k5,
-
-    "🚀",
-
-    "Total Return",
-
-    f"{total_return:.2f}%"
-
-)
+    )
 
 
 # ============================================================
 # AI TECHNICAL SIGNAL
 # ============================================================
 
-score = 0
+latest = filtered_df.iloc[-1]
 
-signal_reasons = []
+
+score = 0
 
 
 if pd.notna(latest["MA20"]):
 
-    if current_price > latest["MA20"]:
+    if latest["CLOSE"] > latest["MA20"]:
 
         score += 1
-
-        signal_reasons.append(
-
-            "Price is above the 20-day moving average."
-
-        )
 
     else:
 
         score -= 1
-
-        signal_reasons.append(
-
-            "Price is below the 20-day moving average."
-
-        )
 
 
 if pd.notna(latest["MA50"]):
 
-    if current_price > latest["MA50"]:
+    if latest["CLOSE"] > latest["MA50"]:
 
         score += 1
-
-        signal_reasons.append(
-
-            "Price is above the 50-day moving average."
-
-        )
 
     else:
 
         score -= 1
-
-        signal_reasons.append(
-
-            "Price is below the 50-day moving average."
-
-        )
 
 
 if pd.notna(latest["RSI"]):
@@ -1524,98 +1007,51 @@ if pd.notna(latest["RSI"]):
 
         score += 2
 
-        signal_reasons.append(
-
-            "RSI indicates an oversold condition."
-
-        )
-
     elif latest["RSI"] > 70:
 
         score -= 2
-
-        signal_reasons.append(
-
-            "RSI indicates an overbought condition."
-
-        )
-
-
-if (
-
-    "VOLUME" in filtered_df.columns
-
-    and
-
-    pd.notna(latest["VOLUME MA20"])
-
-):
-
-    if latest["VOLUME"] > latest["VOLUME MA20"]:
-
-        score += 1
-
-        signal_reasons.append(
-
-            "Trading volume is above its 20-day average."
-
-        )
 
 
 if score >= 3:
 
     signal = "🟢 BUY / ACCUMULATE"
 
-    signal_text = "Positive technical momentum detected."
+    signal_message = (
+
+        "Positive technical momentum detected."
+
+    )
 
 
 elif score <= -2:
 
     signal = "🔴 AVOID / BEARISH"
 
-    signal_text = "Negative technical momentum detected."
+    signal_message = (
+
+        "Negative technical momentum detected."
+
+    )
 
 
 else:
 
     signal = "🟡 HOLD / WAIT"
 
-    signal_text = "Market conditions are mixed."
+    signal_message = (
+
+        "Market conditions are mixed."
+
+    )
 
 
-st.markdown(
+st.success(
 
-    f"""
+    f"🤖 AI Technical Signal: {signal}\n\n"
 
-    <div class="signal-card">
+    f"{signal_message}\n\n"
 
-        <div class="signal-label">
-
-            🤖 AI TECHNICAL SIGNAL
-
-        </div>
-
-        <div class="signal-value">
-
-            {signal}
-
-        </div>
-
-        <div class="signal-description">
-
-            {signal_text}
-
-            <br>
-
-            Technical Score: <b>{score}</b>
-
-        </div>
-
-    </div>
-
-    """,
-
-    unsafe_allow_html=True
+    f"Technical Score: {score}"
 
 )
 
@@ -1644,27 +1080,21 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(
 
 
 # ============================================================
-# TAB 1 — PRICE ANALYSIS
+# TAB 1 - PRICE ANALYSIS
 # ============================================================
 
 with tab1:
 
-    st.markdown(
-
-        '<div class="section-title">📈 Price Analysis</div>',
-
-        unsafe_allow_html=True
-
-    )
+    st.header("📈 Price Analysis")
 
 
-    # CHART 1
+    # 1. Closing Price
 
     fig1 = px.line(
 
         filtered_df,
 
-        x="DATE",
+        x=date_column,
 
         y="CLOSE",
 
@@ -1691,9 +1121,9 @@ with tab1:
     )
 
 
-    # CHART 2
+    # 2. OHLC
 
-    available_price_columns = [
+    price_columns = [
 
         column
 
@@ -1714,38 +1144,38 @@ with tab1:
     ]
 
 
-    fig2 = px.line(
+    if price_columns:
 
-        filtered_df,
+        fig2 = px.line(
 
-        x="DATE",
+            filtered_df,
 
-        y=available_price_columns,
+            x=date_column,
 
-        title="2️⃣ Open, High, Low & Close Prices"
+            y=price_columns,
 
-    )
+            title="2️⃣ Open, High, Low & Close"
 
-
-    fig2.update_layout(
-
-        template="plotly_dark",
-
-        hovermode="x unified"
-
-    )
+        )
 
 
-    st.plotly_chart(
+        fig2.update_layout(
 
-        fig2,
+            template="plotly_dark"
 
-        use_container_width=True
-
-    )
+        )
 
 
-    # CHART 3
+        st.plotly_chart(
+
+            fig2,
+
+            use_container_width=True
+
+        )
+
+
+    # 3. Candlestick
 
     if all(
 
@@ -1771,7 +1201,7 @@ with tab1:
 
                 go.Candlestick(
 
-                    x=filtered_df["DATE"],
+                    x=filtered_df[date_column],
 
                     open=filtered_df["OPEN"],
 
@@ -1790,7 +1220,7 @@ with tab1:
 
         candle.update_layout(
 
-            title="3️⃣ Interactive Candlestick Chart",
+            title="3️⃣ Candlestick Chart",
 
             template="plotly_dark",
 
@@ -1808,13 +1238,13 @@ with tab1:
         )
 
 
-    # CHART 4
+    # 4. Area Chart
 
     fig4 = px.area(
 
         filtered_df,
 
-        x="DATE",
+        x=date_column,
 
         y="CLOSE",
 
@@ -1840,29 +1270,24 @@ with tab1:
 
 
 # ============================================================
-# TAB 2 — VOLUME
+# TAB 2 - VOLUME ANALYSIS
 # ============================================================
 
 with tab2:
 
-    st.markdown(
-
-        '<div class="section-title">📊 Volume Analysis</div>',
-
-        unsafe_allow_html=True
-
-    )
+    st.header("📊 Volume Analysis")
 
 
     if "VOLUME" in filtered_df.columns:
 
-        # CHART 5
+
+        # 5. Volume
 
         fig5 = px.bar(
 
             filtered_df,
 
-            x="DATE",
+            x=date_column,
 
             y="VOLUME",
 
@@ -1887,13 +1312,24 @@ with tab2:
         )
 
 
-        # CHART 6
+        # 6. Volume Moving Average
+
+        filtered_df["VOLUME MA20"] = (
+
+            filtered_df["VOLUME"]
+
+            .rolling(20)
+
+            .mean()
+
+        )
+
 
         fig6 = px.line(
 
             filtered_df,
 
-            x="DATE",
+            x=date_column,
 
             y="VOLUME MA20",
 
@@ -1920,13 +1356,14 @@ with tab2:
 
     if "VALUE" in filtered_df.columns:
 
-        # CHART 7
+
+        # 7. Trading Value
 
         fig7 = px.area(
 
             filtered_df,
 
-            x="DATE",
+            x=date_column,
 
             y="VALUE",
 
@@ -1951,17 +1388,30 @@ with tab2:
         )
 
 
-    if "NO. OF  TRADES" in filtered_df.columns:
+    trade_column = None
 
-        # CHART 8
+
+    if "NO. OF TRADES" in filtered_df.columns:
+
+        trade_column = "NO. OF TRADES"
+
+
+    elif "NO. OF  TRADES" in filtered_df.columns:
+
+        trade_column = "NO. OF  TRADES"
+
+
+    if trade_column:
+
+        # 8. Number of Trades
 
         fig8 = px.line(
 
             filtered_df,
 
-            x="DATE",
+            x=date_column,
 
-            y="NO. OF  TRADES",
+            y=trade_column,
 
             title="8️⃣ Number of Trades"
 
@@ -1985,27 +1435,21 @@ with tab2:
 
 
 # ============================================================
-# TAB 3 — RISK ANALYSIS
+# TAB 3 - RISK ANALYSIS
 # ============================================================
 
 with tab3:
 
-    st.markdown(
-
-        '<div class="section-title">📉 Risk & Returns</div>',
-
-        unsafe_allow_html=True
-
-    )
+    st.header("📉 Risk & Returns")
 
 
-    # CHART 9
+    # 9. Daily Returns
 
     fig9 = px.bar(
 
         filtered_df,
 
-        x="DATE",
+        x=date_column,
 
         y="DAILY RETURN (%)",
 
@@ -2030,7 +1474,7 @@ with tab3:
     )
 
 
-    # CHART 10
+    # 10. Return Distribution
 
     fig10 = px.histogram(
 
@@ -2061,13 +1505,13 @@ with tab3:
     )
 
 
-    # CHART 11
+    # 11. Volatility
 
     fig11 = px.line(
 
         filtered_df,
 
-        x="DATE",
+        x=date_column,
 
         y="VOLATILITY",
 
@@ -2092,7 +1536,7 @@ with tab3:
     )
 
 
-    # CHART 12
+    # 12. Box Plot
 
     fig12 = px.box(
 
@@ -2122,53 +1566,80 @@ with tab3:
 
 
 # ============================================================
-# TAB 4 — TECHNICAL INDICATORS
+# TAB 4 - TECHNICAL INDICATORS
 # ============================================================
 
 with tab4:
 
-    st.markdown(
+    st.header("📐 Technical Indicators")
 
-        '<div class="section-title">📐 Technical Indicators</div>',
 
-        unsafe_allow_html=True
+    # 13. Moving Averages
+
+    ma_chart = go.Figure()
+
+
+    ma_chart.add_trace(
+
+        go.Scatter(
+
+            x=filtered_df[date_column],
+
+            y=filtered_df["CLOSE"],
+
+            name="Close Price"
+
+        )
 
     )
 
 
-    # CHART 13
+    ma_chart.add_trace(
 
-    ma_fig = go.Figure()
+        go.Scatter(
 
+            x=filtered_df[date_column],
 
-    for column in [
+            y=filtered_df["MA20"],
 
-        "CLOSE",
-
-        "MA20",
-
-        "MA50",
-
-        "MA200"
-
-    ]:
-
-        ma_fig.add_trace(
-
-            go.Scatter(
-
-                x=filtered_df["DATE"],
-
-                y=filtered_df[column],
-
-                name=column
-
-            )
+            name="MA20"
 
         )
 
+    )
 
-    ma_fig.update_layout(
+
+    ma_chart.add_trace(
+
+        go.Scatter(
+
+            x=filtered_df[date_column],
+
+            y=filtered_df["MA50"],
+
+            name="MA50"
+
+        )
+
+    )
+
+
+    ma_chart.add_trace(
+
+        go.Scatter(
+
+            x=filtered_df[date_column],
+
+            y=filtered_df["MA200"],
+
+            name="MA200"
+
+        )
+
+    )
+
+
+    ma_chart.update_layout(
 
         title="1️⃣3️⃣ Moving Average Analysis",
 
@@ -2181,25 +1652,26 @@ with tab4:
 
     st.plotly_chart(
 
-        ma_fig,
+        ma_chart,
 
         use_container_width=True
 
     )
 
 
-    # CHART 14
+    # 14. VWAP
 
     if "VWAP" in filtered_df.columns:
 
-        vwap_fig = go.Figure()
+
+        vwap_chart = go.Figure()
 
 
-        vwap_fig.add_trace(
+        vwap_chart.add_trace(
 
             go.Scatter(
 
-                x=filtered_df["DATE"],
+                x=filtered_df[date_column],
 
                 y=filtered_df["CLOSE"],
 
@@ -2210,11 +1682,11 @@ with tab4:
         )
 
 
-        vwap_fig.add_trace(
+        vwap_chart.add_trace(
 
             go.Scatter(
 
-                x=filtered_df["DATE"],
+                x=filtered_df[date_column],
 
                 y=filtered_df["VWAP"],
 
@@ -2225,7 +1697,7 @@ with tab4:
         )
 
 
-        vwap_fig.update_layout(
+        vwap_chart.update_layout(
 
             title="1️⃣4️⃣ Price vs VWAP",
 
@@ -2236,23 +1708,23 @@ with tab4:
 
         st.plotly_chart(
 
-            vwap_fig,
+            vwap_chart,
 
             use_container_width=True
 
         )
 
 
-    # CHART 15
+    # 15. RSI
 
-    rsi_fig = go.Figure()
+    rsi_chart = go.Figure()
 
 
-    rsi_fig.add_trace(
+    rsi_chart.add_trace(
 
         go.Scatter(
 
-            x=filtered_df["DATE"],
+            x=filtered_df[date_column],
 
             y=filtered_df["RSI"],
 
@@ -2263,7 +1735,7 @@ with tab4:
     )
 
 
-    rsi_fig.add_hline(
+    rsi_chart.add_hline(
 
         y=70,
 
@@ -2274,7 +1746,7 @@ with tab4:
     )
 
 
-    rsi_fig.add_hline(
+    rsi_chart.add_hline(
 
         y=30,
 
@@ -2285,18 +1757,20 @@ with tab4:
     )
 
 
-    rsi_fig.update_layout(
+    rsi_chart.update_layout(
 
         title="1️⃣5️⃣ RSI Momentum Analysis",
 
-        template="plotly_dark"
+        template="plotly_dark",
+
+        yaxis_range=[0, 100]
 
     )
 
 
     st.plotly_chart(
 
-        rsi_fig,
+        rsi_chart,
 
         use_container_width=True
 
@@ -2304,18 +1778,12 @@ with tab4:
 
 
 # ============================================================
-# TAB 5 — ADVANCED ANALYTICS
+# TAB 5 - ADVANCED ANALYTICS
 # ============================================================
 
 with tab5:
 
-    st.markdown(
-
-        '<div class="section-title">🔗 Advanced Analytics</div>',
-
-        unsafe_allow_html=True
-
-    )
+    st.header("🔗 Advanced Analytics")
 
 
     correlation_columns = [
@@ -2326,10 +1794,6 @@ with tab5:
 
         "LOW",
 
-        "PREV. CLOSE",
-
-        "LTP",
-
         "CLOSE",
 
         "VWAP",
@@ -2338,7 +1802,7 @@ with tab5:
 
         "VALUE",
 
-        "NO. OF  TRADES"
+        "LTP"
 
     ]
 
@@ -2356,7 +1820,8 @@ with tab5:
 
     if len(available_columns) >= 2:
 
-        correlation = (
+
+        correlation_matrix = (
 
             filtered_df[available_columns]
 
@@ -2365,20 +1830,20 @@ with tab5:
         )
 
 
-        heatmap = px.imshow(
+        correlation_chart = px.imshow(
 
-            correlation,
+            correlation_matrix,
 
             text_auto=True,
 
             aspect="auto",
 
-            title="🔗 Feature Correlation Heatmap"
+            title="🔗 Correlation Heatmap"
 
         )
 
 
-        heatmap.update_layout(
+        correlation_chart.update_layout(
 
             template="plotly_dark"
 
@@ -2387,7 +1852,7 @@ with tab5:
 
         st.plotly_chart(
 
-            heatmap,
+            correlation_chart,
 
             use_container_width=True
 
@@ -2395,16 +1860,28 @@ with tab5:
 
 
 # ============================================================
-# DOWNLOAD DATA
+# DATA TABLE
 # ============================================================
 
-st.markdown(
+st.header("📋 Stock Data Preview")
 
-    '<div class="section-title">📥 Export Analysis</div>',
 
-    unsafe_allow_html=True
+st.dataframe(
+
+    filtered_df.tail(100),
+
+    use_container_width=True,
+
+    hide_index=True
 
 )
+
+
+# ============================================================
+# DOWNLOAD ANALYSIS
+# ============================================================
+
+st.header("📥 Export Analysis")
 
 
 csv_data = filtered_df.to_csv(
@@ -2435,7 +1912,7 @@ st.markdown(
 
     """
 
-    <div class="footer">
+    <div class="footer-text">
 
         📈 StockVision AI
 
