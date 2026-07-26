@@ -25,9 +25,12 @@ st.markdown(
     """
     <style>
 
-    /* MAIN BACKGROUND */
+    /* =================================================
+       MAIN APPLICATION BACKGROUND
+    ================================================= */
 
     .stApp {
+
         background:
         linear-gradient(
             135deg,
@@ -37,41 +40,234 @@ st.markdown(
         );
 
         color: #f8fafc;
+
     }
 
 
-    /* REMOVE DEFAULT TOP SPACE */
+    /* =================================================
+       MAIN CONTENT
+    ================================================= */
 
     .block-container {
+
         padding-top: 2rem;
+
         padding-bottom: 3rem;
+
     }
 
 
-    /* SIDEBAR */
+    /* =================================================
+       SIDEBAR BACKGROUND
+    ================================================= */
 
     section[data-testid="stSidebar"] {
 
         background:
+
         linear-gradient(
             180deg,
-            #020617,
-            #0f172a
+            #111827,
+            #020617
         );
 
-        border-right: 1px solid #1e293b;
+        border-right: 1px solid #334155;
+
     }
 
 
-    /* SIDEBAR TEXT */
+    /* =================================================
+       SIDEBAR ALL TEXT
+    ================================================= */
 
     section[data-testid="stSidebar"] * {
 
-        color: #e2e8f0;
+        color: #f8fafc !important;
+
     }
 
 
-    /* MAIN TITLE */
+    /* =================================================
+       FILE UPLOADER OUTER BOX
+    ================================================= */
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stFileUploader"] {
+
+        background: #ffffff !important;
+
+        border-radius: 14px !important;
+
+        padding: 10px !important;
+
+        border: 2px solid #cbd5e1 !important;
+
+    }
+
+
+    /* =================================================
+       FILE UPLOADER TEXT
+    ================================================= */
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stFileUploader"] label {
+
+        color: #0f172a !important;
+
+        font-weight: 700 !important;
+
+    }
+
+
+    /* =================================================
+       UPLOADER DROPZONE
+    ================================================= */
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stFileUploaderDropzone"] {
+
+        background: #ffffff !important;
+
+        border: 2px dashed #94a3b8 !important;
+
+        border-radius: 10px !important;
+
+    }
+
+
+    /* =================================================
+       UPLOADED FILE NAME
+    ================================================= */
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stFileUploader"] span {
+
+        color: #0f172a !important;
+
+        font-weight: 600 !important;
+
+    }
+
+
+    /* =================================================
+       UPLOADED FILE INFORMATION
+    ================================================= */
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stFileUploader"] small {
+
+        color: #475569 !important;
+
+    }
+
+
+    /* =================================================
+       BROWSE FILE BUTTON
+    ================================================= */
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stFileUploader"] button {
+
+        background: #2563eb !important;
+
+        color: #ffffff !important;
+
+        border: none !important;
+
+        border-radius: 8px !important;
+
+        font-weight: 700 !important;
+
+    }
+
+
+    /* =================================================
+       DATE INPUT CONTAINER
+    ================================================= */
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stDateInput"] {
+
+        margin-bottom: 18px;
+
+    }
+
+
+    /* =================================================
+       DATE INPUT LABEL
+    ================================================= */
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stDateInput"] label {
+
+        color: #f8fafc !important;
+
+        font-size: 15px !important;
+
+        font-weight: 700 !important;
+
+    }
+
+
+    /* =================================================
+       DATE INPUT WHITE BOX
+    ================================================= */
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stDateInput"] input {
+
+        background: #ffffff !important;
+
+        color: #0f172a !important;
+
+        border: 2px solid #cbd5e1 !important;
+
+        border-radius: 12px !important;
+
+        padding: 12px !important;
+
+        font-size: 15px !important;
+
+        font-weight: 600 !important;
+
+    }
+
+
+    /* =================================================
+       DATE PLACEHOLDER
+    ================================================= */
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stDateInput"] input::placeholder {
+
+        color: #64748b !important;
+
+        opacity: 1 !important;
+
+    }
+
+
+    /* =================================================
+       DATE INPUT FOCUS
+    ================================================= */
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stDateInput"] input:focus {
+
+        border-color: #2563eb !important;
+
+        box-shadow:
+
+        0 0 0 2px
+
+        rgba(37, 99, 235, 0.25) !important;
+
+    }
+
+
+    /* =================================================
+       TITLE
+    ================================================= */
 
     .main-title {
 
@@ -80,11 +276,17 @@ st.markdown(
         font-weight: 800;
 
         background:
+
         linear-gradient(
+
             90deg,
+
             #38bdf8,
+
             #818cf8,
+
             #c084fc
+
         );
 
         -webkit-background-clip: text;
@@ -92,8 +294,13 @@ st.markdown(
         -webkit-text-fill-color: transparent;
 
         margin-bottom: 0px;
+
     }
 
+
+    /* =================================================
+       SUBTITLE
+    ================================================= */
 
     .subtitle {
 
@@ -104,18 +311,26 @@ st.markdown(
         margin-top: 5px;
 
         margin-bottom: 30px;
+
     }
 
 
-    /* KPI CARDS */
+    /* =================================================
+       KPI CARDS
+    ================================================= */
 
     .metric-card {
 
         background:
+
         linear-gradient(
+
             145deg,
-            rgba(30, 41, 59, 0.9),
-            rgba(15, 23, 42, 0.9)
+
+            rgba(30, 41, 59, 0.95),
+
+            rgba(15, 23, 42, 0.95)
+
         );
 
         border: 1px solid #334155;
@@ -124,12 +339,16 @@ st.markdown(
 
         padding: 22px;
 
+        min-height: 125px;
+
         box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.25);
+
+        0 10px 30px
+
+        rgba(0, 0, 0, 0.25);
 
         transition: 0.3s;
 
-        min-height: 125px;
     }
 
 
@@ -140,7 +359,11 @@ st.markdown(
         border-color: #38bdf8;
 
         box-shadow:
-        0 15px 35px rgba(56, 189, 248, 0.15);
+
+        0 15px 35px
+
+        rgba(56, 189, 248, 0.15);
+
     }
 
 
@@ -148,29 +371,33 @@ st.markdown(
 
         color: #94a3b8;
 
-        font-size: 14px;
+        font-size: 13px;
 
         font-weight: 600;
 
         text-transform: uppercase;
 
         letter-spacing: 1px;
+
     }
 
 
     .metric-value {
 
-        font-size: 28px;
+        font-size: 27px;
 
         font-weight: 800;
 
         color: #f8fafc;
 
         margin-top: 10px;
+
     }
 
 
-    /* SIGNAL CARD */
+    /* =================================================
+       SIGNAL CARD
+    ================================================= */
 
     .signal-card {
 
@@ -179,20 +406,29 @@ st.markdown(
         border-radius: 20px;
 
         background:
+
         linear-gradient(
+
             135deg,
+
             #172554,
+
             #1e1b4b
+
         );
 
         border: 1px solid #3730a3;
 
         box-shadow:
-        0 10px 30px rgba(79, 70, 229, 0.18);
 
-        margin-top: 20px;
+        0 10px 30px
+
+        rgba(79, 70, 229, 0.18);
+
+        margin-top: 25px;
 
         margin-bottom: 25px;
+
     }
 
 
@@ -200,25 +436,29 @@ st.markdown(
 
         color: #a5b4fc;
 
-        font-size: 15px;
+        font-size: 14px;
 
         text-transform: uppercase;
 
         letter-spacing: 1px;
+
     }
 
 
     .signal-value {
 
-        font-size: 35px;
+        font-size: 34px;
 
         font-weight: 800;
 
         margin-top: 10px;
+
     }
 
 
-    /* SECTION HEADER */
+    /* =================================================
+       SECTION HEADER
+    ================================================= */
 
     .section-header {
 
@@ -231,34 +471,19 @@ st.markdown(
         margin-top: 25px;
 
         margin-bottom: 15px;
+
     }
 
 
-    /* INFO BOX */
-
-    .info-box {
-
-        background: rgba(30, 41, 59, 0.65);
-
-        border-left: 4px solid #38bdf8;
-
-        border-radius: 12px;
-
-        padding: 16px;
-
-        color: #cbd5e1;
-
-        margin: 15px 0;
-    }
-
-
-    /* CHART CONTAINER */
+    /* =================================================
+       CHART CONTAINER
+    ================================================= */
 
     div[data-testid="stPlotlyChart"] {
 
         background:
 
-        rgba(15, 23, 42, 0.6);
+        rgba(15, 23, 42, 0.75);
 
         border-radius: 18px;
 
@@ -268,13 +493,40 @@ st.markdown(
 
         box-shadow:
 
-        0 10px 25px rgba(0, 0, 0, 0.18);
+        0 10px 25px
+
+        rgba(0, 0, 0, 0.18);
 
         margin-bottom: 20px;
+
     }
 
 
-    /* BUTTON */
+    /* =================================================
+       TABS
+    ================================================= */
+
+    button[data-baseweb="tab"] {
+
+        font-size: 15px;
+
+        font-weight: 600;
+
+        color: #94a3b8;
+
+    }
+
+
+    button[data-baseweb="tab"][aria-selected="true"] {
+
+        color: #38bdf8;
+
+    }
+
+
+    /* =================================================
+       DOWNLOAD BUTTON
+    ================================================= */
 
     .stDownloadButton button {
 
@@ -289,6 +541,7 @@ st.markdown(
         color: #38bdf8;
 
         font-weight: 700;
+
     }
 
 
@@ -297,28 +550,13 @@ st.markdown(
         background: #38bdf8;
 
         color: #020617;
+
     }
 
 
-    /* TABS */
-
-    button[data-baseweb="tab"] {
-
-        font-size: 15px;
-
-        font-weight: 600;
-
-        color: #94a3b8;
-    }
-
-
-    button[data-baseweb="tab"][aria-selected="true"] {
-
-        color: #38bdf8;
-    }
-
-
-    /* FOOTER */
+    /* =================================================
+       FOOTER
+    ================================================= */
 
     .footer {
 
@@ -331,10 +569,12 @@ st.markdown(
         padding: 20px;
 
         border-top: 1px solid #1e293b;
+
     }
 
     </style>
     """,
+
     unsafe_allow_html=True
 )
 
@@ -344,19 +584,29 @@ st.markdown(
 # =====================================================
 
 st.markdown(
+
     '<div class="main-title">📈 StockVision AI</div>',
+
     unsafe_allow_html=True
+
 )
 
 
 st.markdown(
+
     """
     <div class="subtitle">
+
     Intelligent stock market analytics • Technical indicators •
+
     Risk analysis • Interactive visualizations
+
     </div>
+
     """,
+
     unsafe_allow_html=True
+
 )
 
 
@@ -367,27 +617,42 @@ st.markdown(
 with st.sidebar:
 
     st.markdown(
+
         "## 📊 StockVision AI"
+
     )
 
-    st.markdown(
-        "---"
-    )
+    st.markdown("---")
+
+
+    # =================================================
+    # CSV UPLOAD
+    # =================================================
 
     uploaded_file = st.file_uploader(
+
         "📂 Upload Stock CSV",
+
         type=["csv"]
+
     )
 
-    st.markdown(
-        "---"
-    )
+
+    st.markdown("---")
+
+
+    # =================================================
+    # FEATURES
+    # =================================================
 
     st.markdown(
+
         "### 📌 Dashboard Features"
+
     )
 
     st.markdown(
+
         """
         📈 Price Analysis
 
@@ -402,28 +667,22 @@ with st.sidebar:
         🔗 Correlation Analysis
 
         🤖 AI Technical Signal
+
         """
+
     )
 
 
 # =====================================================
-# UPLOAD CHECK
+# CHECK FILE
 # =====================================================
 
 if uploaded_file is None:
 
-    st.markdown(
-        """
-        <div class="info-box">
+    st.info(
 
-        👋 Welcome to <b>StockVision AI</b>.
+        "👆 Upload a CSV file from the sidebar to start analysis."
 
-        Upload a stock market CSV file from the sidebar
-        to begin your analysis.
-
-        </div>
-        """,
-        unsafe_allow_html=True
     )
 
     st.stop()
@@ -434,18 +693,22 @@ if uploaded_file is None:
 # =====================================================
 
 df = pd.read_csv(
+
     uploaded_file
+
 )
 
 
 # =====================================================
-# CLEAN COLUMNS
+# CLEAN COLUMN NAMES
 # =====================================================
 
 df.columns = (
 
     df.columns
+
     .str.strip()
+
 )
 
 
@@ -464,7 +727,9 @@ if "DATE" in df.columns:
     )
 
     df = df.sort_values(
+
         "DATE"
+
     )
 
 
@@ -475,16 +740,27 @@ if "DATE" in df.columns:
 numeric_columns = [
 
     "OPEN",
+
     "HIGH",
+
     "LOW",
+
     "PREV. CLOSE",
+
     "LTP",
+
     "CLOSE",
+
     "VWAP",
+
     "52W H",
+
     "52W L",
+
     "VOLUME",
+
     "VALUE",
+
     "NO. OF  TRADES"
 
 ]
@@ -497,9 +773,28 @@ for column in numeric_columns:
         df[column] = (
 
             df[column]
+
             .astype(str)
-            .str.replace(",", "", regex=False)
-            .str.replace("₹", "", regex=False)
+
+            .str.replace(
+
+                ",",
+
+                "",
+
+                regex=False
+
+            )
+
+            .str.replace(
+
+                "₹",
+
+                "",
+
+                regex=False
+
+            )
 
         )
 
@@ -519,7 +814,9 @@ for column in numeric_columns:
 df["DAILY RETURN (%)"] = (
 
     df["CLOSE"]
+
     .pct_change()
+
     * 100
 
 )
@@ -528,7 +825,9 @@ df["DAILY RETURN (%)"] = (
 df["PRICE CHANGE"] = (
 
     df["CLOSE"]
+
     -
+
     df["PREV. CLOSE"]
 
 )
@@ -537,7 +836,9 @@ df["PRICE CHANGE"] = (
 df["INTRADAY RANGE"] = (
 
     df["HIGH"]
+
     -
+
     df["LOW"]
 
 )
@@ -546,7 +847,9 @@ df["INTRADAY RANGE"] = (
 df["MA20"] = (
 
     df["CLOSE"]
+
     .rolling(20)
+
     .mean()
 
 )
@@ -555,7 +858,9 @@ df["MA20"] = (
 df["MA50"] = (
 
     df["CLOSE"]
+
     .rolling(50)
+
     .mean()
 
 )
@@ -564,7 +869,9 @@ df["MA50"] = (
 df["MA200"] = (
 
     df["CLOSE"]
+
     .rolling(200)
+
     .mean()
 
 )
@@ -573,7 +880,9 @@ df["MA200"] = (
 df["VOLATILITY"] = (
 
     df["DAILY RETURN (%)"]
+
     .rolling(20)
+
     .std()
 
 )
@@ -582,7 +891,9 @@ df["VOLATILITY"] = (
 df["VOLUME MA20"] = (
 
     df["VOLUME"]
+
     .rolling(20)
+
     .mean()
 
 )
@@ -594,14 +905,22 @@ df["VOLUME MA20"] = (
 
 delta = df["CLOSE"].diff()
 
+
 gain = delta.where(
+
     delta > 0,
+
     0
+
 )
 
+
 loss = -delta.where(
+
     delta < 0,
+
     0
+
 )
 
 
@@ -609,27 +928,37 @@ avg_gain = gain.rolling(14).mean()
 
 avg_loss = loss.rolling(14).mean()
 
+
 rs = avg_gain / avg_loss
+
 
 df["RSI"] = (
 
     100
+
     -
+
     (
+
         100
+
         /
+
         (1 + rs)
+
     )
 
 )
 
 
 # =====================================================
-# SIDEBAR DATE FILTER
+# DATE FILTER
 # =====================================================
 
 st.sidebar.markdown(
+
     "### 📅 Date Filter"
+
 )
 
 
@@ -653,9 +982,27 @@ end_date = st.sidebar.date_input(
 
 filtered_df = df[
 
-    (df["DATE"] >= pd.to_datetime(start_date))
+    (
+
+        df["DATE"]
+
+        >=
+
+        pd.to_datetime(start_date)
+
+    )
+
     &
-    (df["DATE"] <= pd.to_datetime(end_date))
+
+    (
+
+        df["DATE"]
+
+        <=
+
+        pd.to_datetime(end_date)
+
+    )
 
 ]
 
@@ -669,22 +1016,31 @@ latest = filtered_df.iloc[-1]
 
 current_price = latest["CLOSE"]
 
+
 highest_price = filtered_df["HIGH"].max()
+
 
 lowest_price = filtered_df["LOW"].min()
 
+
 average_volume = filtered_df["VOLUME"].mean()
+
 
 total_return = (
 
     (
 
         filtered_df["CLOSE"].iloc[-1]
+
         /
+
         filtered_df["CLOSE"].iloc[0]
 
     )
-    - 1
+
+    -
+
+    1
 
 ) * 100
 
@@ -694,8 +1050,11 @@ total_return = (
 # =====================================================
 
 st.markdown(
+
     '<div class="section-header">📊 Market Overview</div>',
+
     unsafe_allow_html=True
+
 )
 
 
@@ -703,25 +1062,35 @@ kpi1, kpi2, kpi3, kpi4, kpi5 = st.columns(5)
 
 
 def metric_card(
+
     container,
+
     title,
+
     value
+
 ):
 
     container.markdown(
 
         f"""
+
         <div class="metric-card">
 
         <div class="metric-title">
+
         {title}
+
         </div>
 
         <div class="metric-value">
+
         {value}
+
         </div>
 
         </div>
+
         """,
 
         unsafe_allow_html=True
@@ -730,37 +1099,57 @@ def metric_card(
 
 
 metric_card(
+
     kpi1,
+
     "Current Price",
+
     f"₹{current_price:,.2f}"
+
 )
 
 
 metric_card(
+
     kpi2,
+
     "Highest Price",
+
     f"₹{highest_price:,.2f}"
+
 )
 
 
 metric_card(
+
     kpi3,
+
     "Lowest Price",
+
     f"₹{lowest_price:,.2f}"
+
 )
 
 
 metric_card(
+
     kpi4,
+
     "Average Volume",
+
     f"{average_volume:,.0f}"
+
 )
 
 
 metric_card(
+
     kpi5,
+
     "Total Return",
+
     f"{total_return:.2f}%"
+
 )
 
 
@@ -770,76 +1159,49 @@ metric_card(
 
 score = 0
 
-reasons = []
-
 
 if current_price > latest["MA20"]:
 
     score += 1
 
-    reasons.append(
-        "Price is above the 20-day moving average."
-    )
-
 else:
 
     score -= 1
-
-    reasons.append(
-        "Price is below the 20-day moving average."
-    )
 
 
 if current_price > latest["MA50"]:
 
     score += 1
 
-    reasons.append(
-        "Price is above the 50-day moving average."
-    )
-
 else:
 
     score -= 1
-
-    reasons.append(
-        "Price is below the 50-day moving average."
-    )
 
 
 if latest["RSI"] < 30:
 
     score += 2
 
-    reasons.append(
-        "RSI indicates an oversold condition."
-    )
 
 elif latest["RSI"] > 70:
 
     score -= 2
-
-    reasons.append(
-        "RSI indicates an overbought condition."
-    )
 
 
 if latest["VOLUME"] > latest["VOLUME MA20"]:
 
     score += 1
 
-    reasons.append(
-        "Trading volume is above its average."
-    )
-
 
 if score >= 3:
 
     signal = "🟢 BUY / ACCUMULATE"
 
+
 elif score <= -2:
 
     signal = "🔴 AVOID / BEARISH"
+
 
 else:
 
@@ -849,21 +1211,29 @@ else:
 st.markdown(
 
     f"""
+
     <div class="signal-card">
 
     <div class="signal-title">
+
     🤖 AI TECHNICAL SIGNAL
+
     </div>
 
     <div class="signal-value">
+
     {signal}
+
     </div>
 
     <p>
+
     Technical Score: <b>{score}</b>
+
     </p>
 
     </div>
+
     """,
 
     unsafe_allow_html=True
@@ -872,7 +1242,7 @@ st.markdown(
 
 
 # =====================================================
-# ANALYSIS TABS
+# TABS
 # =====================================================
 
 tab1, tab2, tab3, tab4, tab5 = st.tabs(
@@ -895,14 +1265,17 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(
 
 
 # =====================================================
-# TAB 1
+# TAB 1: PRICE
 # =====================================================
 
 with tab1:
 
     st.markdown(
+
         '<div class="section-header">📈 Price Analysis</div>',
+
         unsafe_allow_html=True
+
     )
 
 
@@ -915,6 +1288,13 @@ with tab1:
         y="CLOSE",
 
         title="Closing Price Trend"
+
+    )
+
+
+    fig1.update_layout(
+
+        template="plotly_dark"
 
     )
 
@@ -1023,7 +1403,7 @@ with tab1:
 
 
 # =====================================================
-# TAB 2
+# TAB 2: VOLUME
 # =====================================================
 
 with tab2:
@@ -1050,6 +1430,13 @@ with tab2:
     )
 
 
+    fig5.update_layout(
+
+        template="plotly_dark"
+
+    )
+
+
     st.plotly_chart(
 
         fig5,
@@ -1068,6 +1455,13 @@ with tab2:
         y="VALUE",
 
         title="Trading Value"
+
+    )
+
+
+    fig6.update_layout(
+
+        template="plotly_dark"
 
     )
 
@@ -1094,6 +1488,13 @@ with tab2:
     )
 
 
+    fig7.update_layout(
+
+        template="plotly_dark"
+
+    )
+
+
     st.plotly_chart(
 
         fig7,
@@ -1104,7 +1505,7 @@ with tab2:
 
 
 # =====================================================
-# TAB 3
+# TAB 3: RISK
 # =====================================================
 
 with tab3:
@@ -1131,6 +1532,13 @@ with tab3:
     )
 
 
+    fig8.update_layout(
+
+        template="plotly_dark"
+
+    )
+
+
     st.plotly_chart(
 
         fig8,
@@ -1149,6 +1557,13 @@ with tab3:
         nbins=40,
 
         title="Return Distribution"
+
+    )
+
+
+    fig9.update_layout(
+
+        template="plotly_dark"
 
     )
 
@@ -1175,6 +1590,13 @@ with tab3:
     )
 
 
+    fig10.update_layout(
+
+        template="plotly_dark"
+
+    )
+
+
     st.plotly_chart(
 
         fig10,
@@ -1195,6 +1617,13 @@ with tab3:
     )
 
 
+    fig11.update_layout(
+
+        template="plotly_dark"
+
+    )
+
+
     st.plotly_chart(
 
         fig11,
@@ -1205,7 +1634,7 @@ with tab3:
 
 
 # =====================================================
-# TAB 4
+# TAB 4: TECHNICAL
 # =====================================================
 
 with tab4:
@@ -1377,7 +1806,7 @@ with tab4:
 
 
 # =====================================================
-# TAB 5
+# TAB 5: ADVANCED
 # =====================================================
 
 with tab5:
@@ -1418,11 +1847,11 @@ with tab5:
 
     available_columns = [
 
-        col
+        column
 
-        for col in correlation_columns
+        for column in correlation_columns
 
-        if col in filtered_df.columns
+        if column in filtered_df.columns
 
     ]
 
@@ -1449,6 +1878,13 @@ with tab5:
     )
 
 
+    heatmap.update_layout(
+
+        template="plotly_dark"
+
+    )
+
+
     st.plotly_chart(
 
         heatmap,
@@ -1463,8 +1899,11 @@ with tab5:
 # =====================================================
 
 st.markdown(
+
     '<div class="section-header">📥 Export Analysis</div>',
+
     unsafe_allow_html=True
+
 )
 
 
@@ -1495,12 +1934,14 @@ st.download_button(
 st.markdown(
 
     """
+
     <div class="footer">
 
     📈 StockVision AI • Built with Python, Streamlit,
     Pandas & Plotly
 
     </div>
+
     """,
 
     unsafe_allow_html=True
